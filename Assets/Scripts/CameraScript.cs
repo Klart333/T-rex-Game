@@ -74,6 +74,11 @@ public class CameraScript : MonoBehaviour
             freezeY = true;
         }
 
+        if(transform.position.y >= 0.7)
+        {
+            freezeY = true;
+        }
+
 
 
 
@@ -119,6 +124,21 @@ public class CameraScript : MonoBehaviour
 
         if(transform.position.y > -9.1 && Input.GetKey(KeyCode.W))
         {
+            if(transform.position.y > 0)
+            {
+                return;
+            }
+
+            freezeY = false;
+        }
+
+        if (transform.position.y < 0.9 && Input.GetKey(KeyCode.S))
+        {
+            if(transform.position.y < 0)
+            {
+                return;
+            }
+
             freezeY = false;
         }
 
