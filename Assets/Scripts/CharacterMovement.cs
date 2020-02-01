@@ -12,16 +12,11 @@ public class CharacterMovement : MonoBehaviour
     Vector2 movement;
 
 
-
-
-
-    // Start is called before the first frame update
     void Start()
     {
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
@@ -32,6 +27,7 @@ public class CharacterMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.deltaTime);
+
     }
 
 }
