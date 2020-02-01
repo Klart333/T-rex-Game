@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class TextWriter : MonoBehaviour
 {
+    public static bool finished = false;
+    public float letterPause = 0.1f;
     Text txt;
     float timer = 0;
     string sentence = "";
@@ -11,27 +13,32 @@ public class TextWriter : MonoBehaviour
     void Start()
     {
         txt = GetComponent<Text>();
-        
+        ogSentence = txt.text;
+        txt.text = "";
+        StartCoroutine(Writer());
+    }
+    private void Update()
+    {
+        if (sentence == ogSentence)
+        {
+            finished = true;
+        }
+        else
+        {
+            finished = false;
+        }
     }
 
-    void Awake()
+    IEnumerator Writer()
     {
-        print("AAA");
-        ogSentence = txt.text;
-        foreach (char item in ogSentence)
+        
+        foreach (char item in ogSentence.ToCharArray())
         {
+            txt.text += item;
             sentence += item;
-            while (timer <= 1)
-            {
-                timer += Time.deltaTime;
-            }
-            if (timer >= 1)
-            {
-                txt.text = sentence;
-                timer = 0;
-            }
-
+            yield return new WaitForSeconds(letterPause);
         }
+
     }
     
 }
