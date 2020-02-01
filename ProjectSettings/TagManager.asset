@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - InteractHitBox
   layers:
   - Default
   - TransparentFX
@@ -40,4 +41,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2105849393
+    locked: 0
+  - name: Ground
+    uniqueID: 3551784169
+    locked: 0
+  - name: OnGround
+    uniqueID: 1492553007
+    locked: 0
+  - name: Foreground
+    uniqueID: 3203945719
     locked: 0
