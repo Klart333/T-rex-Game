@@ -9,17 +9,14 @@ public class YesNoAlternative : MonoBehaviour
     GameObject mainTextPanel;
     [SerializeField]
     GameObject mainCombatPanel;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    [SerializeField]
+    Text mainTextPanelText;
+    int num = 0;
     void Update()
     {
-        if (TextWriter.finished == true)
+        if (SceneManager.GetActiveScene().name != "Scen1")
         {
-            gameObject.SetActive(true);
+            num = 0;
         }
 
         Button btn = GetComponent<Button>();
@@ -27,8 +24,11 @@ public class YesNoAlternative : MonoBehaviour
     }
     void YesNo()
     {
-        if (gameObject.name == "Yes")
+        if (gameObject.name == "Yes" && num == 0)
         {
+            num++;
+            Enemy.enemy = Resources.Load<GameObject>(Enemy.enemy.name);
+            print(Resources.Load<GameObject>(Enemy.enemy.name) + " AAAAAAAAAAAAAAAAAA");
 
             SceneManager.LoadScene("CombatScene");
         }

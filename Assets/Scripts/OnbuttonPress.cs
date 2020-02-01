@@ -17,6 +17,10 @@ public class OnbuttonPress : MonoBehaviour
     GameObject mainPanel;
     [SerializeField]
     GameObject itemHud;
+    [SerializeField]
+    GameObject textPanel;
+    [SerializeField]
+    Text textPanelText;
 
     Image topLeftImage;
     Image topRightImage;
@@ -85,6 +89,13 @@ public class OnbuttonPress : MonoBehaviour
         else if (gameObject.name == "GoBack")
         {
             GoBack();
+        }
+        else if (gameObject.name == "Dance")
+        {
+            mainPanel.SetActive(false);
+
+            textPanel.SetActive(true);
+            textPanelText.GetComponent<TextWriter>().Initialiser("You do a DAANCE!! Croc is Very Impressed");
         }
  
     }

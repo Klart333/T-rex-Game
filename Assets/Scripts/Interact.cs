@@ -41,28 +41,28 @@ public class Interact : MonoBehaviour
         #endregion
 
         #region Facing
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKey(KeyCode.W))
         {
             facingUp = true;
             facingDown = false;
             facingLeft = false;
             facingRight = false;
         }
-        else if (Input.GetKeyDown(KeyCode.S))
+        else if (Input.GetKey(KeyCode.S))
         {
             facingUp = false;
             facingDown = true;
             facingLeft = false;
             facingRight = false;
         }
-        else if (Input.GetKeyDown(KeyCode.A))
+        else if (Input.GetKey(KeyCode.A))
         {
             facingUp = false;
             facingDown = false;
             facingLeft = true;
             facingRight = false;
         }
-        else if (Input.GetKeyDown(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D))
         {
             facingUp = false;
             facingDown = false;
