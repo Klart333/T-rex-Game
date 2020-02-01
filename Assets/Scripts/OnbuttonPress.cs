@@ -14,6 +14,8 @@ public class OnbuttonPress : MonoBehaviour
     GameObject bottomRight;
     [SerializeField]
     GameObject mainPanel;
+    [SerializeField]
+    GameObject itemHud;
 
     Image topLeftImage;
     Image topRightImage;
@@ -39,6 +41,7 @@ public class OnbuttonPress : MonoBehaviour
             print("You Ran Away");
 
             mainPanel.SetActive(false);
+            itemHud.SetActive(false);
 
         }
         else if (gameObject.name == "Talk")
@@ -70,6 +73,15 @@ public class OnbuttonPress : MonoBehaviour
         else if (gameObject.name == "Item")
         {
             new WaitForSeconds(0.5f);
+
+            if (itemHud.activeSelf == true)
+            {
+                itemHud.SetActive(false);
+            }
+            else if (itemHud.activeSelf == false)
+            {
+                itemHud.SetActive(true);
+            }
         }
         else if (gameObject.name == "GoBack")
         {
