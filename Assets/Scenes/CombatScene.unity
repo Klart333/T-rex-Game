@@ -1495,6 +1495,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1116275430}
   - component: {fileID: 1116275429}
+  - component: {fileID: 1116275431}
   m_Layer: 0
   m_Name: DinoPlacement
   m_TagString: Untagged
@@ -1514,7 +1515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 952b85e0537b34046814d94afcc6df3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainDino: {fileID: 0}
+  mainDino: {fileID: 308821577096027646, guid: 4264cbf5d2381a14087cc96f980fe691, type: 3}
 --- !u!4 &1116275430
 Transform:
   m_ObjectHideFlags: 0
@@ -1529,6 +1530,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1116275431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116275428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2530dcb0f44ebd4ca5465c634decb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1167033020
 GameObject:
   m_ObjectHideFlags: 0

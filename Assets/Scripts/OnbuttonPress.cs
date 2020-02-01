@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class OnbuttonPress : MonoBehaviour
 {
     [SerializeField]
@@ -38,10 +39,8 @@ public class OnbuttonPress : MonoBehaviour
         {
             new WaitForSeconds(0.5f);
 
-            print("You Ran Away");
 
-            mainPanel.SetActive(false);
-            itemHud.SetActive(false);
+            SceneManager.LoadScene("Scen1");
 
         }
         else if (gameObject.name == "Talk")

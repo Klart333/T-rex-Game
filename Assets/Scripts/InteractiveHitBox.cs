@@ -23,7 +23,11 @@ public class InteractiveHitBox : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameObject gm = collision.gameObject;
-        Enemy.enemy = gm;
+        if (collision.gameObject.tag != "Player")
+        {
+            GameObject gm = collision.gameObject;
+            Enemy.enemy = gm;
+        }
+
     }
 }
