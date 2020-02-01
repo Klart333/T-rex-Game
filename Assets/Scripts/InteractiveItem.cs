@@ -4,8 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 public class InteractiveItem : MonoBehaviour
 {
+    int num = 0;
     [SerializeField]
-    GameObject txt; 
+    GameObject txt;
+    [SerializeField]
+    Text txtText;
     void Start()
     {
         
@@ -17,9 +20,11 @@ public class InteractiveItem : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (collision.gameObject.tag == "InteractHitBox")
         {
             txt.SetActive(true);
+            txtText.GetComponent<TextWriter>().Initialiser("Hey Buddy! Wanna fight!?");
         }
     }
 

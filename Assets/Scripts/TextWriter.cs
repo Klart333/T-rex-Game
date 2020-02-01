@@ -4,36 +4,39 @@ using UnityEngine;
 using UnityEngine.UI;
 public class TextWriter : MonoBehaviour
 {
-    [SerializeField]
-    GameObject yes;
-    [SerializeField]
-    GameObject no;
 
-    public static bool finished = false;
+    public bool finished = false;
     public float letterPause = 0.1f;
     Text txt;
-    float timer = 0;
     string sentence = "";
-    string ogSentence = "";
-    void Start()
+    public string ogSentence = "";
+
+    public void Initialiser(string text)
     {
+        ogSentence = text;
+        sentence = "";
+        finished = false;
         txt = GetComponent<Text>();
-        ogSentence = txt.text;
         txt.text = "";
         StartCoroutine(Writer());
     }
     private void Update()
     {
+       
         if (sentence == ogSentence)
         {
+            
             finished = true;
-            no.SetActive(true);
-            yes.SetActive(true);
+
         }
-        else
+        else if(sentence != ogSentence)
         {
             finished = false;
+
         }
+        
+        
+
     }
 
     IEnumerator Writer()
