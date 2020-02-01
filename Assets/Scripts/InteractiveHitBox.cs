@@ -20,4 +20,10 @@ public class InteractiveHitBox : MonoBehaviour
 
         Destroy(gameObject, 0.05f);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        GameObject gm = collision.gameObject;
+        Enemy.enemy = gm;
+    }
 }

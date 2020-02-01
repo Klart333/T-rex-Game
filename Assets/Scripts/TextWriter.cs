@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 public class TextWriter : MonoBehaviour
 {
+    [SerializeField]
+    GameObject yes;
+    [SerializeField]
+    GameObject no;
+
     public static bool finished = false;
     public float letterPause = 0.1f;
     Text txt;
@@ -22,6 +27,8 @@ public class TextWriter : MonoBehaviour
         if (sentence == ogSentence)
         {
             finished = true;
+            no.SetActive(true);
+            yes.SetActive(true);
         }
         else
         {

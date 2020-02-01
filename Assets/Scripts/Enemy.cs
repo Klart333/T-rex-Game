@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class YesNoAlternative : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    public static GameObject enemy;
     void Start()
     {
         
