@@ -57,13 +57,13 @@ public class CameraScript : MonoBehaviour
         
 
 
-        if (transform.position.x >= 10.3) //Freezes the x position of the camera when scrolling to the end of the rightmost position
+        if (transform.position.x >= 5.47) //Freezes the x position of the camera when scrolling to the end of the rightmost position
         {
             freezeX = true;
         }
 
 
-        if(transform.position.x <= -10.3) //Freezes the x position of the camera when scrolling to the end of the leftmost position
+        if(transform.position.x <= -5.47) //Freezes the x position of the camera when scrolling to the end of the leftmost position
         {
             freezeX = true;
         }
@@ -107,12 +107,12 @@ public class CameraScript : MonoBehaviour
 
 
 
-        if (transform.position.x > 10.3 && Input.GetKey(KeyCode.A))
+        if (transform.position.x > 5.47 && Input.GetKey(KeyCode.A))
         {
             freezeX = false;
         }
 
-        if(transform.position.x < -10.3 && Input.GetKey(KeyCode.D))
+        if(transform.position.x < -5.47 && Input.GetKey(KeyCode.D))
         {
             freezeX = false;
         }
