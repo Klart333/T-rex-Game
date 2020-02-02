@@ -17,6 +17,7 @@ public class GetItemUse : MonoBehaviour
     [SerializeField]
     GameObject textPanelText;
 
+
     TextWriter textWriterScript;
     void Start()
     {
