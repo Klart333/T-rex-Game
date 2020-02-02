@@ -123,7 +123,7 @@ public class OnbuttonPress : MonoBehaviour
             CloseAllCombat.CloseAll(new List<GameObject>() { mainCombatPanel, itemHud, values, regret });
 
             textPanel.SetActive(true);
-            textPanelText.GetComponent<TextWriter>().Initialiser("You Flatter " + Enemy.enemy.name + ". He Smiles Gleefully back");
+            textPanelText.GetComponent<TextWriter>().Initialiser("You Tell " + Enemy.enemy.name + " that you like his humps. He Smiles Gleefully back");
 
             TurnHandler.enemyHappiness += 15;
             TurnHandler.enemyBoredom -= 5;
