@@ -11,6 +11,8 @@ public class CharacterMovement : MonoBehaviour
 
     Vector2 movement;
 
+    public Animator anim;
+
 
     void Start()
     {
@@ -21,6 +23,10 @@ public class CharacterMovement : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+
+        anim.SetFloat("Horizontal", movement.x);
+        anim.SetFloat("Vertical", movement.y);
+        anim.SetFloat("Speed", movement.sqrMagnitude); 
     }
 
 
