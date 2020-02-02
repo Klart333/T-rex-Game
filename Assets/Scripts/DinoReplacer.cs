@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class DinoReplacer : MonoBehaviour
 {
-
+    
     Vector3 Lastposition;
     Scene ogScen;
     Scene newScene;
@@ -22,12 +22,18 @@ public class DinoReplacer : MonoBehaviour
     void Update()
     {
 
+
+
+
         if (newScene.buildIndex != ogScen.buildIndex)
         {
+            if (SceneManager.GetActiveScene().name != "CombatScene")
+            {
 
-            gameObject.transform.position = Lastposition;
-            print(Lastposition);
+                gameObject.transform.position = Lastposition;
+                print(Lastposition);
 
+            }
         }
         else
         {

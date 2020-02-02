@@ -30,6 +30,11 @@ public class OnbuttonPress : MonoBehaviour
     Image topRightImage;
     Image bottomRightImage;
     Image bottomLeftImage;
+
+
+    public Animator anim;
+
+
     void Start()
     {
         Button theButton = gameObject.GetComponent<Button>();
@@ -96,10 +101,17 @@ public class OnbuttonPress : MonoBehaviour
         }
         else if (gameObject.name == "Dance")
         {
+
+
             BetweenTurns.betweenTurn = true;
             CloseAllCombat.CloseAll(new List<GameObject>() { mainCombatPanel, itemHud, values, regret });
-            
+
+
             textPanel.SetActive(true);
+
+            //anim.SetTrigger("Dance");
+
+
             textPanelText.GetComponent<TextWriter>().Initialiser("You do a DAANCE!! Croc is Very Impressed");
             TurnHandler.enemyBoredom -= 10;
             TurnHandler.enemyHappiness += 5;

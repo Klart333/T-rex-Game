@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -21,38 +22,45 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-
-        anim.SetFloat("Horizontal", movement.x);
-        anim.SetFloat("Vertical", movement.y);
-        anim.SetFloat("Speed", movement.sqrMagnitude);
 
 
-        if (Interact.facingUp == true)
+        if (SceneManager.GetActiveScene().name != "CombatScene")
         {
-            anim.SetBool("facingUp", true);
-            anim.SetBool("facingDown", false);
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
+            anim.SetFloat("Horizontal", movement.x);
+            anim.SetFloat("Vertical", movement.y);
+            anim.SetFloat("Speed", movement.sqrMagnitude);
+
+
+            if (Interact.facingUp == true)
+            {
+                anim.SetBool("facingUp", true);
+                anim.SetBool("facingDown", false);
+            }
+
+            if (Interact.facingDown == true)
+            {
+                anim.SetBool("facingDown", true);
+                anim.SetBool("facingUp", false);
+            }
+
+
+            if (Interact.facingRight == true)
+            {
+                anim.SetBool("facingRight", true);
+            }
+            if (Interact.facingLeft == true)
+            {
+                anim.SetBool("facingRight", false);
+            }
+
         }
 
-        if (Interact.facingDown == true)
-        {
-            anim.SetBool("facingDown", true);
-            anim.SetBool("facingUp", false);
-        }
 
 
-        if (Interact.facingRight == true)
-        {
-            anim.SetBool("facingRight", true);
-        }
-        if(Interact.facingLeft == true)
-        {
-            anim.SetBool("facingRight", false);
-        }
 
 
-       
 
 
     }
@@ -60,6 +68,7 @@ public class CharacterMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         rb.MovePosition(rb.position + movement * moveSpeed * Time.deltaTime);
 
     }
