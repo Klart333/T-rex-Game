@@ -37,16 +37,16 @@ public class Items : MonoBehaviour
     {
         if (itemSlot1Image.sprite == null)
         {
-            if (amountOfSaft != 0)
+            if (amountOfSaft != 0 && itemSlot1Image.sprite != saft && itemSlot2Image.sprite != saft && itemSlot3Image.sprite != saft)
             {
 
                 itemSlot1Image.sprite = saft;
             }
-            else if (amountOfValnut != 0)
+            else if (amountOfValnut != 0 && itemSlot1Image.sprite != valnut && itemSlot2Image.sprite != valnut && itemSlot3Image.sprite != valnut)
             {
                 itemSlot1Image.sprite = valnut;
             }
-            else if (amountOfRolex != 0)
+            else if (amountOfRolex != 0 && itemSlot1Image.sprite != rolex && itemSlot2Image.sprite != rolex && itemSlot3Image.sprite != rolex)
             {
                 itemSlot1Image.sprite = rolex;
                 print(rolex);
@@ -59,15 +59,15 @@ public class Items : MonoBehaviour
         if (itemSlot2Image.sprite == null)
         {
 
-            if (amountOfSaft != 0 && itemSlot1Image.sprite != saft)
+            if (amountOfSaft != 0 && itemSlot1Image.sprite != saft && itemSlot2Image.sprite != saft && itemSlot3Image.sprite != saft)
             {
                 itemSlot2Image.sprite = saft;
             }
-            else if (amountOfValnut != 0 && itemSlot1Image.sprite != valnut)
+            else if (amountOfValnut != 0 && itemSlot1Image.sprite != valnut && itemSlot2Image.sprite != valnut && itemSlot3Image.sprite != valnut)
             {
                 itemSlot2Image.sprite = valnut;
             }
-            else if (amountOfRolex != 0 && itemSlot1Image.sprite != rolex)
+            else if (amountOfRolex != 0 && itemSlot1Image.sprite != rolex && itemSlot2Image.sprite != rolex && itemSlot3Image.sprite != rolex)
             {
                 itemSlot2Image.sprite = rolex;
             }
@@ -79,15 +79,15 @@ public class Items : MonoBehaviour
         }
         if (itemSlot3Image.sprite == null)
         {
-            if (amountOfSaft != 0 && itemSlot1Image.sprite != saft && itemSlot2Image.sprite != saft)
+            if (amountOfSaft != 0 && itemSlot1Image.sprite != saft && itemSlot2Image.sprite != saft && itemSlot3Image.sprite != saft)
             {
                 itemSlot3Image.sprite = saft;
             }
-            else if (amountOfValnut != 0 && itemSlot1Image.sprite != valnut && itemSlot2Image.sprite != valnut)
+            else if (amountOfValnut != 0 && itemSlot1Image.sprite != valnut && itemSlot2Image.sprite != valnut && itemSlot3Image.sprite != valnut)
             {
                 itemSlot3Image.sprite = valnut;
             }
-            else if (amountOfRolex != 0 && itemSlot1Image.sprite != rolex && itemSlot2Image.sprite != rolex)
+            else if (amountOfRolex != 0 && itemSlot1Image.sprite != rolex && itemSlot2Image.sprite != rolex && itemSlot3Image.sprite != rolex)
             {
                 itemSlot3Image.sprite = rolex;
             }

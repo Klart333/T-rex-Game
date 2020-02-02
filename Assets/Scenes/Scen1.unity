@@ -3552,6 +3552,7 @@ GameObject:
   - component: {fileID: 1397833274}
   - component: {fileID: 1397833273}
   - component: {fileID: 1397833280}
+  - component: {fileID: 1397833281}
   m_Layer: 0
   m_Name: T-rex2020
   m_TagString: Player
@@ -3739,6 +3740,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interact: {fileID: 6968227244215493138, guid: 62c64905d0900b344b7979c4d8df1782,
     type: 3}
+--- !u!114 &1397833281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397833272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc32764dd84112648a591725fbfb2cd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1407690838
 GameObject:
   m_ObjectHideFlags: 0
