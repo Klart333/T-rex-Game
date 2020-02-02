@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class EnemyValues : MonoBehaviour
+public class PlayerValues : MonoBehaviour
 {
     Text txt;
     void Start()
@@ -15,11 +15,11 @@ public class EnemyValues : MonoBehaviour
     {
         if (gameObject.name == "Boredom")
         {
-            txt.text = "Boredom: " + TurnHandler.enemyBoredom.ToString();
+            txt.text = "Boredom: " + TurnHandler.playerBoredom.ToString();
         }
         else if (gameObject.name == "Happiness")
         {
-            txt.text = "Happiness: " + TurnHandler.enemyHappiness.ToString();
+            txt.text = "Happiness: " + TurnHandler.playerHappiness.ToString();
         }
 
     }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4052219677361478357}
   - component: {fileID: 6995383185377573172}
   - component: {fileID: 8293767258622439453}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ValnutGO
   m_TagString: Untagged
   m_Icon: {fileID: 0}

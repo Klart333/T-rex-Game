@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class TextWriter : MonoBehaviour
 {
 
@@ -13,6 +14,7 @@ public class TextWriter : MonoBehaviour
 
     public void Initialiser(string text)
     {
+        TextContinue.myContinue = false;
         ogSentence = text;
         sentence = "";
         finished = false;
@@ -25,8 +27,19 @@ public class TextWriter : MonoBehaviour
        
         if (sentence == ogSentence)
         {
-            
-            finished = true;
+            if (SceneManager.GetActiveScene().name == "CombatScene")
+            {
+                if (TextContinue.myContinue)
+                {
+                    finished = true;
+
+                }
+            }
+            else 
+            {
+                finished = true;
+
+            }
 
         }
         else if(sentence != ogSentence)

@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class OnbuttonPress : MonoBehaviour
 {
     [SerializeField]
+    GameObject values;
+    [SerializeField]
     GameObject topLeft;
     [SerializeField]
     GameObject topRight;
@@ -14,13 +16,15 @@ public class OnbuttonPress : MonoBehaviour
     [SerializeField]
     GameObject bottomRight;
     [SerializeField]
-    GameObject mainPanel;
+    GameObject mainCombatPanel;
     [SerializeField]
     GameObject itemHud;
     [SerializeField]
     GameObject textPanel;
     [SerializeField]
     Text textPanelText;
+    [SerializeField]
+    GameObject regret;
 
     Image topLeftImage;
     Image topRightImage;
@@ -92,12 +96,104 @@ public class OnbuttonPress : MonoBehaviour
         }
         else if (gameObject.name == "Dance")
         {
-            mainPanel.SetActive(false);
-
+            BetweenTurns.betweenTurn = true;
+            CloseAllCombat.CloseAll(new List<GameObject>() { mainCombatPanel, itemHud, values, regret });
+            
             textPanel.SetActive(true);
             textPanelText.GetComponent<TextWriter>().Initialiser("You do a DAANCE!! Croc is Very Impressed");
+            TurnHandler.enemyBoredom -= 10;
+            TurnHandler.enemyHappiness += 5;
+            TurnHandler.playerHappiness += 8;
         }
- 
+        else if (gameObject.name == "Flatter")
+        {
+            BetweenTurns.betweenTurn = true;
+            CloseAllCombat.CloseAll(new List<GameObject>() { mainCombatPanel, itemHud, values, regret });
+
+            textPanel.SetActive(true);
+            textPanelText.GetComponent<TextWriter>().Initialiser("You Flatter " + Enemy.enemy.name + ". He Smiles Gleefully back");
+
+            TurnHandler.enemyHappiness += 15;
+            TurnHandler.enemyBoredom -= 5;
+            TurnHandler.playerBoredom += 5;
+            TurnHandler.playerHappiness -= 5;
+        }
+        else if (gameObject.name == "Ignore")
+        {
+            BetweenTurns.betweenTurn = true;
+            CloseAllCombat.CloseAll(new List<GameObject>() { mainCombatPanel, itemHud, values, regret });
+
+            textPanel.SetActive(true);
+            textPanelText.GetComponent<TextWriter>().Initialiser("You Ignore the dinosaur, he seems sad and lost...");
+
+            TurnHandler.playerBoredom += 15;
+            TurnHandler.enemyBoredom -= 10;
+            TurnHandler.enemyHappiness -= 15;
+        }
+        else if (gameObject.name == "Insult")
+        {
+            BetweenTurns.betweenTurn = true;
+            CloseAllCombat.CloseAll(new List<GameObject>() { mainCombatPanel, itemHud, values, regret });
+
+            textPanel.SetActive(true);
+            textPanelText.GetComponent<TextWriter>().Initialiser("You comment on how the enemy looks like he was a 3-year olds first drawing");
+
+            TurnHandler.playerBoredom -= 10;
+            TurnHandler.enemyBoredom -= 20;
+            TurnHandler.enemyHappiness -= 10;
+        }
+        else if (gameObject.name == "Roar")
+        {
+            BetweenTurns.betweenTurn = true;
+            CloseAllCombat.CloseAll(new List<GameObject>() { mainCombatPanel, itemHud, values, regret });
+
+            textPanel.SetActive(true);
+            textPanelText.GetComponent<TextWriter>().Initialiser("RRRRAAAAAAAAAAAAAAAWWWWWWWWWWWWRRRRR!!!");
+
+            TurnHandler.playerHappiness += 10;
+            TurnHandler.enemyBoredom -= 30;
+            
+        }
+        else if (gameObject.name == "Sing")
+        {
+            BetweenTurns.betweenTurn = true;
+            CloseAllCombat.CloseAll(new List<GameObject>() { mainCombatPanel, itemHud, values, regret });
+
+            textPanel.SetActive(true);
+            textPanelText.GetComponent<TextWriter>().Initialiser("You sing, the enemy struggles to hold back his laughter");
+
+            TurnHandler.playerBoredom -= 5;
+            TurnHandler.playerHappiness -= 15;
+            TurnHandler.enemyBoredom -= 20;
+            TurnHandler.enemyHappiness += 15;
+        }
+        else if (gameObject.name == "Smile")
+        {
+            BetweenTurns.betweenTurn = true;
+            CloseAllCombat.CloseAll(new List<GameObject>() { mainCombatPanel, itemHud, values, regret });
+
+            textPanel.SetActive(true);
+            textPanelText.GetComponent<TextWriter>().Initialiser("You smile towards the dinosaur, He gladly smiles back");
+
+            TurnHandler.playerBoredom += 15;
+            TurnHandler.playerHappiness += 10;
+            TurnHandler.enemyBoredom -= 10;
+            TurnHandler.enemyHappiness += 10;
+        }
+        else if (gameObject.name == "Sneer")
+        {
+            BetweenTurns.betweenTurn = true;
+            CloseAllCombat.CloseAll(new List<GameObject>() { mainCombatPanel, itemHud, values, regret });
+
+            textPanel.SetActive(true);
+            textPanelText.GetComponent<TextWriter>().Initialiser("You sneer at the " + Enemy.enemy.name + ", his eyes start watering...");
+
+            TurnHandler.playerBoredom -= 20;
+            TurnHandler.playerHappiness += 10;
+            TurnHandler.enemyBoredom -= 40;
+            TurnHandler.enemyHappiness -= 25;
+        }
+
     }
     void GoBack()
     {

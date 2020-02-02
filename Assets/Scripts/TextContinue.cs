@@ -22,6 +22,8 @@ public class TextContinue : MonoBehaviour
     Image topRightImage;
     Image bottomRightImage;
     Image bottomLeftImage;
+
+    public static bool myContinue;
     void Start()
     {
 
@@ -31,7 +33,6 @@ public class TextContinue : MonoBehaviour
         bottomLeftImage = bottomLeft.GetComponent<Image>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Button btn = GetComponent<Button>();
@@ -40,20 +41,9 @@ public class TextContinue : MonoBehaviour
 
     void Continue()
     {
-        if (theText.GetComponent<TextWriter>().ogSentence != "The enemy got bored and fell asleep... You walk away dejectedly")
-        {
-            combat.SetActive(true);
 
-            topLeftImage.sprite = Resources.Load<Sprite>("Actions/Item");
-            topLeft.name = "Item";
-            topRightImage.sprite = Resources.Load<Sprite>("Actions/Talk");
-            topRight.name = "Talk";
-            bottomLeftImage.sprite = Resources.Load<Sprite>("Actions/Act");
-            bottomLeft.name = "Act";
-            bottomRightImage.sprite = Resources.Load<Sprite>("Actions/Flee");
-            bottomRight.name = "Flee";
-
-            gameObject.SetActive(false);
-        }
+        myContinue = true;
+        print("Continue " + myContinue);
+        
     }
 }

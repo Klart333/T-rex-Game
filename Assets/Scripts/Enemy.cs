@@ -14,5 +14,10 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         print("the enemy is: " + enemy);
+
+        if (enemy == null)
+        {
+            enemy = Resources.Load<GameObject>("TheCroc");
+        }
     }
 }

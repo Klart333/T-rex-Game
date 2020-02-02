@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6381919063004480550}
   - component: {fileID: -835936547469698700}
   - component: {fileID: -5473506748505098479}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SaftGO
   m_TagString: Untagged
   m_Icon: {fileID: 0}

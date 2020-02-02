@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6616572030868825435}
   - component: {fileID: -1412371115609736548}
   - component: {fileID: -7533894513460317040}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: RolexGO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
