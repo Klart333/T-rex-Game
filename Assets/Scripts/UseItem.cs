@@ -8,6 +8,7 @@ public class UseItem : MonoBehaviour
     GameObject mainItemPanel;
     [SerializeField]
     GameObject regret;
+    public static GameObject theItem;
 
     Image item;
 
@@ -37,10 +38,11 @@ public class UseItem : MonoBehaviour
 
     void ItemUse()
     {
-        print("the item is " + Resources.Load<Sprite>(item.sprite.name));
-        GameObject sprite = Instantiate<GameObject>(Resources.Load<GameObject>(item.sprite.name + "GO"), new Vector3(1000, 1000, -9990), Quaternion.identity);
+        theItem = Resources.Load<GameObject>(item.sprite.name + "GO");
+        Instantiate<GameObject>(Resources.Load<GameObject>(item.sprite.name + "GO"), new Vector3(1000, 1000, -9990), Quaternion.identity);
 
         mainItemPanel.transform.localScale = new Vector3(mainItemPanel.transform.localScale.x / 25, mainItemPanel.transform.localScale.y, 0);
         regret.SetActive(true);
+        item.sprite = null;
     }
 }

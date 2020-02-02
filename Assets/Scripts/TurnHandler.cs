@@ -51,9 +51,38 @@ public class TurnHandler : MonoBehaviour
 
             if (num == 0)
             {
-                textWriterScript.Initialiser("Croc talks about the weather, you feel yourself becoming less interested in the confrontation");
-                playerBoredom += 10;
-                num++;
+                int randnum = Random.Range(1, 4);
+                if (randnum == 1)
+                {
+                    textWriterScript.Initialiser(Enemy.enemy.name + " talks about the weather, you feel yourself becoming less interested in the confrontation");
+                    playerBoredom += 10;
+                    num++;
+                }
+                else if (randnum == 2)
+                {
+                    textWriterScript.Initialiser(Enemy.enemy.name + " humms a song, you feel a little happier");
+                    playerHappiness += 10;
+                    enemyHappiness += 5;
+                    num++;
+                    
+                }
+                else if (randnum == 3)
+                {
+                    textWriterScript.Initialiser(Enemy.enemy.name + " Aggresively bites towards you");
+                    playerBoredom -= 10;
+                    playerHappiness -= 15;
+                    
+                    num++;
+                }
+                else if (randnum == 4)
+                {
+                    textWriterScript.Initialiser(Enemy.enemy.name + " Strikes a pose, Incredible!");
+                    playerBoredom -= 10;
+                    enemyHappiness += 5;
+                    enemyBoredom += 5;
+                    playerHappiness += 10;
+                    num++;
+                }
             }
 
             if (textWriterScript.finished == true)
@@ -110,7 +139,9 @@ public class TurnHandler : MonoBehaviour
 
         if (enemyBoredom >= 100 && enemyTurn == false && BetweenTurns.betweenTurn == false)
         {
-            enemyBoredom = 0;
+            InteractiveItem.crocDefeated = true;
+
+            enemyBoredom = 1;
             CloseAllCombat.CloseAll(new List<GameObject>() { combatPanel, itemPanel, regretPanel, values });
 
             textPanel.SetActive(true);
@@ -119,6 +150,8 @@ public class TurnHandler : MonoBehaviour
         }
         else if (enemyBoredom <= 0 && enemyTurn == false && boredText1 == false && BetweenTurns.betweenTurn == false)
         {
+            InteractiveItem.crocDefeated = true;
+
             if (num1 == 0)
             {
                 num1++;
@@ -142,6 +175,8 @@ public class TurnHandler : MonoBehaviour
         }
         else if (playerBoredom >= 100 && enemyTurn == false && BetweenTurns.betweenTurn == false)
         {
+            InteractiveItem.crocDefeated = true;
+
             playerBoredom = 0;
 
             CloseAllCombat.CloseAll(new List<GameObject>() { combatPanel, itemPanel, regretPanel, values });
@@ -151,6 +186,8 @@ public class TurnHandler : MonoBehaviour
         }
         else if (playerBoredom <= 0 && enemyTurn == false && boredText2 == false && BetweenTurns.betweenTurn == false)
         {
+            InteractiveItem.crocDefeated = true;
+
             if (num2 == 0)
             {
                 num2++;
@@ -177,6 +214,8 @@ public class TurnHandler : MonoBehaviour
 
             textPanel.SetActive(true);
             textWriterScript.Initialiser("The enemy is very sad, so he runs away....");
+            InteractiveItem.crocDefeated = true;
+
         }
         else if (playerHappiness <= 0 && BetweenTurns.betweenTurn == false)
         {
@@ -184,6 +223,8 @@ public class TurnHandler : MonoBehaviour
 
             textPanel.SetActive(true);
             textWriterScript.Initialiser("You become very sad, while running away you swear to remember this moment....");
+            InteractiveItem.crocDefeated = true;
+
         }
         else if (enemyHappiness >= 100 && BetweenTurns.betweenTurn == false)
         {
@@ -191,11 +232,18 @@ public class TurnHandler : MonoBehaviour
 
             textPanel.SetActive(true);
             textWriterScript.Initialiser("The enemy hops around with glee:) You and " + Enemy.enemy.name + " form a bond");
+
+            InteractiveItem.crocDefeated = true;
         }
         else if (playerHappiness >= 100 && BetweenTurns.betweenTurn == false)
         {
+
+            CloseAllCombat.CloseAll(new List<GameObject>() { combatPanel, itemPanel, regretPanel, values });
+
             textPanel.SetActive(true);
             textWriterScript.Initialiser("You Ignore the enemy as you continue your jorney with newfound enthusiasm");
+
+            InteractiveItem.crocDefeated = true;
         }
 
 

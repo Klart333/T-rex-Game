@@ -9,6 +9,8 @@ public class InteractiveItem : MonoBehaviour
     GameObject txt;
     [SerializeField]
     Text txtText;
+
+    public static bool crocDefeated = false;
     void Start()
     {
         
@@ -16,7 +18,10 @@ public class InteractiveItem : MonoBehaviour
 
     void Update()
     {
-        
+        if (crocDefeated && gameObject.name == "TheCroc")
+        {
+            Destroy(gameObject);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
