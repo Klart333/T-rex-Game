@@ -6,10 +6,10 @@ public class Interact : MonoBehaviour
 {
     [SerializeField]
     GameObject interact;
-    bool facingUp = false;
-    bool facingDown = false;
-    bool facingLeft = false;
-    bool facingRight = false;
+    public static bool facingUp = false;
+    public static bool facingDown = false;
+    public static bool facingLeft = false;
+    public static bool facingRight = false;
 
     void Update()
     {

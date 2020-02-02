@@ -26,7 +26,35 @@ public class CharacterMovement : MonoBehaviour
 
         anim.SetFloat("Horizontal", movement.x);
         anim.SetFloat("Vertical", movement.y);
-        anim.SetFloat("Speed", movement.sqrMagnitude); 
+        anim.SetFloat("Speed", movement.sqrMagnitude);
+
+
+        if (Interact.facingUp == true)
+        {
+            anim.SetBool("facingUp", true);
+            anim.SetBool("facingDown", false);
+        }
+
+        if (Interact.facingDown == true)
+        {
+            anim.SetBool("facingDown", true);
+            anim.SetBool("facingUp", false);
+        }
+
+
+        if (Interact.facingRight == true)
+        {
+            anim.SetBool("facingRight", true);
+        }
+        if(Interact.facingLeft == true)
+        {
+            anim.SetBool("facingRight", false);
+        }
+
+
+       
+
+
     }
 
 
