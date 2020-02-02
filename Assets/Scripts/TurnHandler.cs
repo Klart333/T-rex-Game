@@ -177,7 +177,7 @@ public class TurnHandler : MonoBehaviour
         {
             InteractiveItem.crocDefeated = true;
 
-            playerBoredom = 0;
+            playerBoredom = 1;
 
             CloseAllCombat.CloseAll(new List<GameObject>() { combatPanel, itemPanel, regretPanel, values });
 
